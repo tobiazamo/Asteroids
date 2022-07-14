@@ -66,7 +66,6 @@ void gameOverScreen() {
   textAlign(CENTER, TOP);
   text("Press R to restart", width/2, height/1.5);
   if ( key == 'r' || key == 'R') {
-      loop();
       reset();
     }
 }
@@ -81,4 +80,5 @@ void reset() {
 }
 
 void keyPressed() {
+  loop();
 }
