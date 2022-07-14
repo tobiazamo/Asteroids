@@ -44,14 +44,13 @@ void draw() {
     
   } else if (gameover) {
     gameOverScreen();
-    if ( key == 'r' || key == 'R') {
-      reset();
-    }
   }
 }
 
 void gameOverScreen() {
+  noLoop();
   s.Display();
+  print(points);
   for (int i=0; i<asteroids.length; i++) {
     asteroids[i].Display();
   }
@@ -66,6 +65,10 @@ void gameOverScreen() {
   text("Score: " + points, width/2, height/2);
   textAlign(CENTER, TOP);
   text("Press R to restart", width/2, height/1.5);
+  if ( key == 'r' || key == 'R') {
+      loop();
+      reset();
+    }
 }
 
 void reset() {
